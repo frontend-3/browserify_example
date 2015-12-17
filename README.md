@@ -20,3 +20,6 @@ For deploy example 2, run:
 
     gulp browserify:example-2
 
+For deploy example 3(coffee), run:
+
+    gulp browserify:example-coffee

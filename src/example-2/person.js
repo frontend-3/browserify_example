@@ -1,4 +1,5 @@
- var Person = function () {
+var Person = function () {
+
     var self = this;
 
     return {
@@ -6,8 +7,8 @@
             return self.age;
         },
         setAge : function (age) {
-            self.age = age;        
+            self.age = age;
         }
     }
- } 
+ }
  module.exports = Person;

@@ -37,3 +37,21 @@ gulp.task('browserify:example-2', function () {
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./build/example-2/'));
 });
+
+gulp.task('browserify:example-coffee', function () {
+  var b = browserify({
+    entries: './src/example-coffee/main.coffee',
+    extensions:[".coffee"],
+    transform: ["coffeeify"],
+    debug: true
+  });
+
+  return b.bundle()
+    .pipe(source('main.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(uglify())
+        .on('error', gutil.log)
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./build/example-coffee/'));
+});

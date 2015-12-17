@@ -1,7 +1,7 @@
 
 Browserify example
 ===================
-Two examples for browserify implementation. First example has npm dependency(uniq) and second call a own module.
+Two examples for browserify implementation and gulpfile for deploy. First example has npm dependency(uniq) and second call a own module.
 
 
 Installation

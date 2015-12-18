@@ -55,3 +55,21 @@ gulp.task('browserify:example-coffee', function () {
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./build/example-coffee/'));
 });
+
+gulp.task('browserify:example-coffee-react', function () {
+  var b = browserify({
+    entries: './src/example-coffee-react/main.coffee',
+    extensions:[".coffee"],
+    transform: ["cjsxify"],
+    debug: true
+  });
+
+  return b.bundle()
+    .pipe(source('main.js'))
+    //.pipe(buffer())
+    //.pipe(sourcemaps.init({loadMaps: true}))
+    //    .pipe(uglify())
+    //    .on('error', gutil.log)
+    //.pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./build/example-coffee-react/'));
+});
